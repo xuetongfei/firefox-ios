@@ -52,7 +52,7 @@ class PhotonActionSheetTest: BaseTestCase {
         let pageObjectButtonCenter = pageObjectButton.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0))
         pageObjectButtonCenter.press(forDuration: 1)
 
-        waitForExistence(app.cells["Copy"], timeout: 10)
+        waitForExistence(app.collectionViews.buttons["Copy"], timeout: 10)
     }
 
     func testSendToDeviceFromPageOptionsMenu() {

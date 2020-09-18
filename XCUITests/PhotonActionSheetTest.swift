@@ -88,10 +88,11 @@ class PhotonActionSheetTest: BaseTestCase {
     private func openNewShareSheet() {
         navigator.openURL("example.com")
         waitUntilPageLoad()
+        waitForNoExistence(app.staticTexts["Fennec pasted from CoreSimulatorBridge"])
         navigator.goto(PageOptionsMenu)
         waitForExistence(app.tables["Context Menu"].cells["action_share"], timeout: 5)
         app.tables["Context Menu"].staticTexts["Share Page With…"].tap()
-        waitForExistence(app.cells["Copy"], timeout: 5)
+        waitForExistence(app.collectionViews.buttons["Copy"], timeout: 5)
         // This is not ideal but only way to get the element on iPhone 8
         // for iPhone 11, that would be boundBy: 2
         let fennecElement = app.collectionViews.scrollViews.cells.element(boundBy: 1)

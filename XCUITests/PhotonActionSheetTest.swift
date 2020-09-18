@@ -6,6 +6,7 @@ import XCTest
 
 class PhotonActionSheetTest: BaseTestCase {
     // Smoketest
+    /* Disabled due to https://github.com/mozilla-mobile/firefox-ios/issues/7346
     func testPinToTop() {
         navigator.openURL("http://example.com")
         waitUntilPageLoad()
@@ -28,7 +29,7 @@ class PhotonActionSheetTest: BaseTestCase {
         // Check that it has been unpinned
         cell.press(forDuration: 2)
         waitForExistence(app.cells["action_pin"])
-    }
+    }*/
     // Disable issue #5554
 
     func testShareOptionIsShown() {
